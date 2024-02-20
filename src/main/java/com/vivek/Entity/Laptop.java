@@ -5,6 +5,7 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.OneToOne;
 import lombok.Data;
 
 @Entity
@@ -17,6 +18,10 @@ public class Laptop {
 	private Integer id;
     @Column(name="l_name")
 	private String name;
+    
 	private String about;
+	
+    @OneToOne
+	private Student student;
 
 }

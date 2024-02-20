@@ -2,6 +2,7 @@ package com.vivek.Entity;
 
 import org.hibernate.annotations.Generated;
 
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -25,6 +26,6 @@ public class Student {
 	
 	private  String stream;
 	
-	@OneToOne
+	@OneToOne(mappedBy = "student", cascade = CascadeType.ALL)
 	private Laptop laptop;
 }

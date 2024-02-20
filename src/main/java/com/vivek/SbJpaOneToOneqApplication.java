@@ -1,5 +1,6 @@
 package com.vivek;
 
+import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -28,22 +29,39 @@ public class SbJpaOneToOneqApplication implements CommandLineRunner{
 	
 	@Override
 	public void run(String... args) throws Exception {
+		
 //		Laptop lap=new Laptop();
 //		lap.setName("Mac");
 //		lap.setAbout("32gb Ram And i5 Pro");
 //		
+//
 //		Student std   = new Student();
 //		std.setName("Vivek");
 //		std.setStream("MCA");
+//		
+//		
+//		lap.setStudent(std);
 //		std.setLaptop(lap);
 //		
-//		
-//		laptop.save(lap);
 //		student.save(std);
+//		laptop.save(lap);
 		
-//		UniDirectional
+		
+//		UniDirectional :- Only we can fetch by one way that is by student we cant fetch bye laptop id ;
+		
 //	Student st = student.findById(1).get();
 //  System.out.println(st.getName()+" "+st.getStream()+" "+st.getLaptop().getName());
+//		
+//		 Laptop l = laptop.findById(1).get();
+//		         Student std = student.findById(1).get(); 
+//		        	System.out.println(std.getName()+
+//		        			" "+std.getStream()+" "
+//		        			+std.getLaptop().getName());
+		        	
+		        	Laptop lap = laptop.findById(152).get();
+		         System.out.println(lap.getName()+" "+lap.getStudent().getName());
+		        
+		 
    
 		
 	}
